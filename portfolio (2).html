@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mikhail Litvishko. Лендинги и сайты для малого бизнеса</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800;900&family=Golos+Text:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111111'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23F2F1ED'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg: #F1F0EC;
+    --surface: #FFFFFF;
+    --surface-soft: #E8E7E1;
+    --ink: #111111;
+    --ink-soft: #6B6B66;
+    --border: rgba(17,17,17,0.1);
+    --font-display: 'Golos Text', sans-serif;
+    --font-headline: 'Unbounded', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:1120px;margin:0 auto;padding:0 28px;}
+  h1,h2{font-family:var(--font-display);font-weight:700;font-style:normal;line-height:1.05;font-synthesis:none;}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:14px 24px;border-radius:100px;
+    font-weight:600;font-size:14px;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .btn-dark{background:var(--ink);color:var(--bg);}
+  .btn-dark:hover{transform:translateY(-2px);}
+  .btn-outline{border:1.3px solid var(--border);color:var(--ink);}
+  .btn-outline:hover{background:var(--surface);}
+  .btn-arrow{
+    width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.15);
+    display:flex;align-items:center;justify-content:center;font-size:12px;
+  }
+  .btn-outline .btn-arrow{background:var(--ink);color:var(--bg);}
+
+  /* NAV */
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:1px solid var(--border);}
+  .brand{display:flex;align-items:center;gap:9px;}
+  .brand-mark{width:26px;height:26px;border-radius:7px;background:var(--ink);}
+  .brand-name{font-family:var(--font-display);font-weight:700;font-size:16px;}
+  .nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--ink-soft);}
+  @media (max-width:840px){.nav-links{display:none;}}
+
+  /* HERO */
+  .hero{padding:70px 0 60px;}
+  .hero-tag{font-size:12px;color:var(--ink-soft);margin-bottom:34px;}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .eyebrow-caps{
+    font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:600;margin-bottom:20px;
+  }
+  .hero h1{
+    font-family:var(--font-headline);
+    font-weight:700;
+    font-size:clamp(26px,3.2vw,40px);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    max-width:480px;margin-bottom:32px;
+  }
+
+  /* SOFT "3D" SHAPE COMPOSITION */
+  .shape-scene{position:relative;height:280px;}
+  .soft-shape{position:absolute;border-radius:34% 66% 60% 40% / 46% 40% 60% 54%;}
+  .s1{
+    width:190px;height:190px;top:10px;left:50%;transform:translateX(-50%);
+    background:linear-gradient(150deg, #FFFFFF, #D9D8D2 70%);
+    box-shadow:0 30px 60px rgba(17,17,17,0.12), inset -14px -14px 30px rgba(0,0,0,0.06), inset 10px 10px 24px rgba(255,255,255,0.8);
+    animation:shape-float 7s ease-in-out infinite;
+  }
+  .s2{
+    width:80px;height:80px;border-radius:50%;top:0;right:14%;
+    background:radial-gradient(circle at 35% 30%, #FFFFFF, #CFCEC7 75%);
+    box-shadow:0 16px 28px rgba(17,17,17,0.1);
+    animation:shape-float 6s ease-in-out infinite reverse;
+  }
+  .s3{
+    width:46px;height:46px;border-radius:50%;bottom:20px;left:18%;
+    background:radial-gradient(circle at 35% 30%, #FFFFFF, #DAD9D3 75%);
+    box-shadow:0 10px 20px rgba(17,17,17,0.1);
+    animation:shape-float 5.5s ease-in-out infinite;
+  }
+  @keyframes shape-float{
+    0%,100%{transform:translateY(0) translateX(-50%);}
+    50%{transform:translateY(-16px) translateX(-50%);}
+  }
+  .s2, .s3{animation-name:shape-float-alt;}
+  @keyframes shape-float-alt{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-14px);}
+  }
+  @media (max-width:840px){.hero-grid{grid-template-columns:1fr;}.shape-scene{height:200px;}}
+
+  /* SCROLL REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease, transform .65s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* MARQUEE */
+  .marquee-wrap{overflow:hidden;padding:36px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .marquee-track{display:flex;width:max-content;animation:marquee-scroll 22s linear infinite;}
+  .marquee-item{
+    font-family:var(--font-headline);font-weight:700;
+    font-size:clamp(30px,6vw,64px);white-space:nowrap;padding-right:40px;
+    color:var(--ink);
+  }
+  .marquee-item .dim{color:var(--surface-soft);}
+  @keyframes marquee-scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ABOUT SECTION */
+  .about-section{padding:80px 0;}
+  .about-grid{display:grid;grid-template-columns:auto 1fr;gap:50px;}
+  .about-label{
+    writing-mode:vertical-rl;transform:rotate(180deg);
+    font-size:13px;color:var(--ink-soft);font-weight:600;
+    align-self:start;
+  }
+  .about-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:28px;
+    padding:48px;display:grid;grid-template-columns:120px 1fr;gap:36px;align-items:center;
+  }
+  .about-icon{width:100%;height:100px;}
+  .about-card p{font-size:19px;line-height:1.55;}
+  .about-card .dim{color:var(--ink-soft);}
+  @media (max-width:780px){
+    .about-grid{grid-template-columns:1fr;}
+    .about-label{writing-mode:horizontal-tb;transform:none;}
+    .about-card{grid-template-columns:1fr;text-align:center;padding:32px;}
+  }
+
+  /* WHY SECTION */
+  .why-section{padding:20px 0 80px;}
+  .why-top{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;margin-bottom:48px;}
+  .why-top p{color:var(--ink-soft);font-size:14.5px;margin-bottom:16px;}
+  .why-top h2{font-size:clamp(30px,4.4vw,48px);}
+  .why-top h2 .dim{color:var(--surface-soft);-webkit-text-stroke:1px var(--ink-soft);}
+  @media (max-width:780px){.why-top{grid-template-columns:1fr;}}
+
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .why-card{
+    background:var(--surface-soft);border-radius:24px;padding:32px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    min-height:280px;transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .why-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(17,17,17,0.08);}
+  .why-num{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink-soft);
+  }
+  .why-card h3{font-family:var(--font-display);font-size:19px;font-weight:700;margin-top:20px;line-height:1.25;}
+  .why-3d{width:80px;height:80px;margin:16px 0;}
+  @media (max-width:780px){.why-grid{grid-template-columns:1fr;}}
+
+  /* STATS ROW (big numbers, like reference) */
+  /* PHONE MOCKUP (демонстрация адаптива) */
+  .phone-section{padding:30px 0 20px;text-align:center;}
+  .phone-stage{position:relative;height:480px;display:flex;align-items:center;justify-content:center;}
+  .phone-frame{
+    width:230px;height:460px;border-radius:36px;
+    background:linear-gradient(160deg, #232323, #0A0A0A);
+    padding:12px;box-shadow:0 40px 70px rgba(17,17,17,0.28), inset 0 0 0 1.5px rgba(255,255,255,0.06);
+    animation:phone-float 6s ease-in-out infinite;
+  }
+  @keyframes phone-float{
+    0%,100%{transform:translateY(0) rotate(-2deg);}
+    50%{transform:translateY(-16px) rotate(1.5deg);}
+  }
+  .phone-notch{width:70px;height:16px;border-radius:10px;background:#0A0A0A;margin:0 auto 8px;position:relative;z-index:2;}
+  .phone-screen{
+    width:100%;height:calc(100% - 24px);border-radius:26px;
+    background:var(--bg);overflow:hidden;position:relative;padding:15px 13px;
+    font-family:var(--font-body);
+  }
+  .ps-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .ps-brand{display:flex;align-items:center;gap:5px;}
+  .ps-dot{width:9px;height:9px;border-radius:3px;background:var(--ink);flex-shrink:0;}
+  .ps-brand-text{font-family:var(--font-display);font-weight:700;font-size:7px;color:var(--ink);}
+  .ps-nav-btn{background:var(--ink);color:var(--bg);font-size:6.5px;font-weight:600;padding:4px 8px;border-radius:100px;}
+  .ps-tag{font-size:6px;color:var(--ink-soft);margin-bottom:8px;}
+  .ps-eyebrow{font-size:5.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:8px;}
+  .ps-h1{
+    font-family:var(--font-headline);font-weight:700;color:var(--ink);
+    font-size:14px;line-height:1.18;letter-spacing:-0.01em;margin-bottom:14px;
+  }
+  .ps-btn{
+    display:inline-block;background:var(--ink);color:var(--bg);
+    font-size:7px;font-weight:600;padding:7px 12px;border-radius:100px;margin-bottom:18px;
+  }
+  .ps-shape-row{position:relative;height:70px;margin-bottom:16px;}
+  .ps-shape{
+    position:absolute;border-radius:38% 62% 60% 40% / 46% 40% 60% 54%;
+    background:linear-gradient(150deg,#FFFFFF,#D3D2CC);
+    box-shadow:0 10px 20px rgba(17,17,17,0.12);
+    animation:ps-shape-pulse 3.5s ease-in-out infinite;
+  }
+  .ps-shape.big{width:56px;height:56px;top:0;right:20px;}
+  .ps-shape.small{width:22px;height:22px;border-radius:50%;top:8px;right:0;animation-delay:.5s;}
+  @keyframes ps-shape-pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
+  .ps-divider{height:1px;background:var(--border);margin:14px -13px;}
+  .ps-content{position:relative;}
+  .ps-card{display:flex;gap:7px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px;margin-bottom:6px;}
+  .ps-card-swatch{width:22px;height:22px;border-radius:5px;background:var(--surface-soft);flex-shrink:0;}
+  .ps-card-lines{flex:1;}
+  .ps-marquee{font-family:var(--font-headline);font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap;overflow:hidden;}
+  .ps-marquee span{color:var(--surface-soft);-webkit-text-stroke:0.5px var(--ink-soft);padding:0 6px;}
+  .ps-scroll-cursor{
+    position:absolute;right:4px;top:16px;width:3px;height:40px;border-radius:3px;
+    background:rgba(17,17,17,0.15);z-index:3;
+    animation:ps-scroll 5s ease-in-out infinite;
+  }
+  @keyframes ps-scroll{
+    0%,15%{transform:translateY(0);}
+    50%,65%{transform:translateY(300px);}
+    100%{transform:translateY(0);}
+  }
+  .ps-content{animation:ps-content-scroll 5s ease-in-out infinite;}
+  @keyframes ps-content-scroll{
+    0%,15%{transform:translateY(0);}
+    50%,65%{transform:translateY(-130px);}
+    100%{transform:translateY(0);}
+  }
+
+  .stats-row{
+    display:flex;align-items:center;gap:0;
+    padding:36px 0;border-top:1px solid var(--border);
+    flex-wrap:wrap;
+  }
+  .stats-lead{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-soft);font-weight:600;margin-right:40px;}
+  .stat-block{padding:0 34px;border-left:1px solid var(--border);}
+  .stat-block:first-of-type{border-left:none;padding-left:0;}
+  .stat-num{font-family:var(--font-display);font-size:clamp(32px,4vw,48px);font-weight:800;}
+  .stat-lbl{font-size:12px;color:var(--ink-soft);}
+  @media (max-width:840px){.stat-block{padding:0 18px;}}
+
+  /* PROJECTS */
+  .projects-section{padding:70px 0;}
+  .projects{display:flex;flex-direction:column;gap:16px;margin-top:32px;}
+  .project-card{
+    display:grid;grid-template-columns:180px 1fr auto;gap:24px;align-items:center;
+    background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:20px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .project-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(17,17,17,0.08);}
+  .project-swatch{height:100px;border-radius:13px;position:relative;overflow:hidden;}
+  .project-swatch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+  .project-card:hover .project-swatch img{transform:scale(1.06);}
+  .project-swatch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.65) 100%);}
+  .project-swatch span{position:absolute;bottom:10px;left:12px;z-index:1;font-family:var(--font-display);font-weight:700;font-size:13px;color:#fff;}
+  .project-info h3{font-family:var(--font-display);font-size:17px;margin-bottom:5px;font-weight:700;}
+  .project-info p{color:var(--ink-soft);font-size:13px;margin-bottom:10px;}
+  .project-tags{display:flex;gap:8px;flex-wrap:wrap;}
+  .tag{font-size:11px;padding:5px 11px;border-radius:100px;background:var(--surface-soft);color:var(--ink-soft);font-weight:600;}
+  .project-link{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap;}
+  @media (max-width:720px){.project-card{grid-template-columns:1fr;}}
+
+  /* CTA */
+  .cta-banner{background:var(--ink);border-radius:28px;padding:56px 40px;text-align:center;color:var(--bg);}
+  .cta-banner h2{font-size:clamp(26px,3.6vw,36px);margin-bottom:14px;}
+  .cta-banner p{color:rgba(241,240,236,0.65);font-size:14.5px;margin-bottom:28px;max-width:400px;margin-left:auto;margin-right:auto;}
+  .cta-banner .btn-dark{background:var(--bg);color:var(--ink);}
+  .cta-banner .btn-dark .btn-arrow{background:var(--ink);color:var(--bg);}
+
+  footer{padding:28px 0;text-align:center;color:var(--ink-soft);font-size:13px;}
+</style>
+</head>
+<body>
+
+<header class="container nav">
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-name">Mikhail Litvishko</div>
+  </div>
+  <nav class="nav-links">
+    <a href="#projects">Работы</a>
+    <a href="#why">Почему я</a>
+  </nav>
+  <a href="https://t.me/litvishk0" class="btn btn-dark">Написать<span class="btn-arrow">→</span></a>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-tag">Лендинги и сайты для малого бизнеса</div>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow-caps">Свободен для новых проектов</div>
+        <h1>Сайты, которые приносят заявки, а не просто красиво выглядят</h1>
+        <a href="https://t.me/litvishk0" class="btn btn-dark">Обсудить проект<span class="btn-arrow">→</span></a>
+      </div>
+      <div class="shape-scene">
+        <div class="soft-shape s1"></div>
+        <div class="soft-shape s2"></div>
+        <div class="soft-shape s3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Сайты <span class="dim">·</span> Формы <span class="dim">·</span> Калькуляторы <span class="dim">·</span> Заявки <span class="dim">·</span></span>
+    <span class="marquee-item">Сайты <span class="dim">·</span> Формы <span class="dim">·</span> Калькуляторы <span class="dim">·</span> Заявки <span class="dim">·</span></span>
+  </div>
+</div>
+
+<section class="about-section reveal">
+  <div class="container about-grid">
+    <div class="about-label">Обо мне</div>
+    <div class="about-card">
+      <svg class="about-icon" viewBox="0 0 120 100" fill="none">
+        <path d="M20 50C30 30 40 70 50 50C60 30 70 70 80 50C90 30 100 50 100 50" stroke="#111111" stroke-width="8" stroke-linecap="round" opacity="0.85"/>
+        <circle cx="20" cy="50" r="7" fill="#111111"/>
+        <circle cx="100" cy="50" r="7" fill="#D9D8D2"/>
+      </svg>
+      <p>Я <strong>Михаил</strong>, делаю лендинги и сайты для малого бизнеса на базе AI-инструментов. <span class="dim">Фокус на том, что реально приносит заявки:</span> формы, калькуляторы цены, понятная структура, а не визуальные изыски без пользы.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why-section reveal" id="why">
+  <div class="container">
+    <div class="why-top">
+      <div>
+        <p>Расскажу, почему стоит доверить сайт именно мне. Коротко, без воды.</p>
+        <a href="https://t.me/litvishk0" class="btn btn-outline">Написать<span class="btn-arrow">→</span></a>
+      </div>
+      <div>
+        <div class="eyebrow-caps">Ваш партнёр</div>
+        <h2>Почему <span class="dim">выбрать</span> меня?</h2>
+      </div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div>
+          <div class="why-3d">
+            <svg viewBox="0 0 80 80"><polygon points="40,10 65,60 15,60" fill="url(#g1)"/><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#C9C8C1"/></linearGradient></defs></svg>
+          </div>
+          <h3>Готовый сайт за 2–4 дня</h3>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div>
+          <div class="why-3d">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="26" fill="url(#g2)"/><defs><radialGradient id="g2" cx="35%" cy="30%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#C9C8C1"/></radialGradient></defs></svg>
+          </div>
+          <h3>Отвечаю в течение дня, без долгих цепочек</h3>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div>
+          <div class="why-3d">
+            <svg viewBox="0 0 80 80"><rect x="18" y="18" width="44" height="44" rx="12" fill="url(#g3)"/><defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#C9C8C1"/></linearGradient></defs></svg>
+          </div>
+          <h3>Честная цена, фиксируется сразу</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="phone-section reveal">
+  <div class="container">
+    <div class="eyebrow-caps">Проверено на практике</div>
+    <h2 style="font-size:clamp(24px,3vw,32px);margin-bottom:10px;">Отлично выглядит и на телефоне</h2>
+    <p style="color:var(--ink-soft);font-size:14.5px;max-width:420px;margin:0 auto;">Каждый мой сайт, включая этот, полностью адаптивен. Проверяю на реальных устройствах, а не только в браузере.</p>
+
+    <div class="phone-stage">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="ps-scroll-cursor"></div>
+          <div class="ps-content">
+            <div class="ps-nav">
+              <div class="ps-brand"><span class="ps-dot"></span><span class="ps-brand-text">Mikhail Litvishko</span></div>
+              <span class="ps-nav-btn">Написать</span>
+            </div>
+            <div class="ps-tag">Лендинги и сайты для малого бизнеса</div>
+            <div class="ps-eyebrow">Свободен для новых проектов</div>
+            <div class="ps-h1">Сайты, которые приносят заявки, а не просто красиво выглядят</div>
+            <span class="ps-btn">Обсудить проект →</span>
+            <div class="ps-shape-row">
+              <div class="ps-shape big"></div>
+              <div class="ps-shape small"></div>
+            </div>
+            <div class="ps-divider"></div>
+            <div class="ps-marquee">Сайты · Заявки · Формы · Калькуляторы</div>
+            <div class="ps-divider"></div>
+            <div class="ps-eyebrow">Работы</div>
+            <div class="ps-card"><div class="ps-card-swatch"></div><div class="ps-card-lines"><div class="ps-line" style="width:80%;height:5px;border-radius:3px;background:var(--ink-soft);opacity:0.5;margin-bottom:4px;"></div><div class="ps-line" style="width:55%;height:5px;border-radius:3px;background:var(--ink-soft);opacity:0.3;"></div></div></div>
+            <div class="ps-card"><div class="ps-card-swatch"></div><div class="ps-card-lines"><div class="ps-line" style="width:70%;height:5px;border-radius:3px;background:var(--ink-soft);opacity:0.5;margin-bottom:4px;"></div><div class="ps-line" style="width:45%;height:5px;border-radius:3px;background:var(--ink-soft);opacity:0.3;"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container reveal">
+  <div class="stats-row">
+    <div class="stats-lead">→ Коротко о цифрах</div>
+    <div class="stat-block"><div class="stat-num">2–4</div><div class="stat-lbl">дня на сайт</div></div>
+    <div class="stat-block"><div class="stat-num">3</div><div class="stat-lbl">готовых проекта</div></div>
+    <div class="stat-block"><div class="stat-num">100%</div><div class="stat-lbl">адаптив под мобильные</div></div>
+    <div class="stat-block"><div class="stat-num">24ч</div><div class="stat-lbl">на ответ в переписке</div></div>
+  </div>
+</div>
+
+<section class="projects-section reveal" id="projects">
+  <div class="container">
+    <div class="eyebrow-caps">Работы</div>
+    <h2 style="font-size:clamp(26px,3.4vw,36px);">Готовые проекты</h2>
+    <div class="projects">
+      <div class="project-card">
+        <div class="project-swatch"><img src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?q=80&w=500&auto=format&fit=crop" alt="Кофейня Зёрна"><span>Зёрна</span></div>
+        <div class="project-info"><h3>Кофейня «Зёрна»</h3><p>Лендинг с меню, акциями и демо-корзиной</p><div class="project-tags"><span class="tag">Лендинг</span><span class="tag">Адаптив</span></div></div>
+        <a href="https://zerna13.netlify.app/" class="project-link" target="_blank">Открыть →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-swatch"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=500&auto=format&fit=crop" alt="Студия маникюра Ноготок"><span>Ноготок</span></div>
+        <div class="project-info"><h3>Студия маникюра «Ноготок»</h3><p>Прайс, портфолио с фильтром, форма записи</p><div class="project-tags"><span class="tag">Форма заявки</span><span class="tag">Фильтры</span></div></div>
+        <a href="https://nogotki.netlify.app/" class="project-link" target="_blank">Открыть →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-swatch"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=500&auto=format&fit=crop" alt="Клининговая компания ЧистоDom"><span>ЧистоDom</span></div>
+        <div class="project-info"><h3>Клининговая компания «ЧистоDom»</h3><p>Лендинг с живым калькулятором стоимости уборки</p><div class="project-tags"><span class="tag">Калькулятор</span><span class="tag">Форма заявки</span></div></div>
+        <a href="https://cleandom.netlify.app/" class="project-link" target="_blank">Открыть →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container reveal" style="padding-bottom:70px;">
+  <div class="cta-banner">
+    <h2>Готовы обсудить свой сайт?</h2>
+    <p>Напишите в Telegram. Отвечу в течение дня и предложу решение под ваш бюджет и задачу.</p>
+    <a href="https://t.me/litvishk0" class="btn btn-dark">Написать в Telegram<span class="btn-arrow">→</span></a>
+  </div>
+</section>
+
+<footer>© 2026 Mikhail Litvishko</footer>
+
+<script>
+  // Внутренние ссылки-якоря (#why, #projects и т.д.) прокручиваем вручную через JS,
+  // чтобы избежать бага, при котором встроенное превью уводит на внешний адрес
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
